@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+  <h1>Shopping Cart</h1>
+  <div class="cart-container">
+    <table id="cart-table">
+      <thead>
+        <tr>
+          <th>Item Name</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="cart">
+        {% for item in cart_items %}
+          <tr data-item-id="{{ item.id }}">
+            <td>{{ item.name }}</td>
+            <td>x{{ item.quantity }}</td>
+            <td>£{{ item.price }}</td>
+            <td><button class="remove-from-cart" data-item-id="{{ item.id }}">Remove</button></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p id="order-status"></p>
+    <form id="checkout-form">
+      <input type="submit" value="Checkout">
+    </form>
+  </div>
+  <div class="sidebar-cart">
+    <h2>Cart Summary</h2>
+    <ul>
+      {% for item in cart_items %}
+        <li>
+          {{ item.name }} (x{{ item.quantity }})
+          <span>£{{ item.price }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+    <p>Total: £{{ total_price }}</p>
+    <button class="checkout-btn">Checkout</button>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
