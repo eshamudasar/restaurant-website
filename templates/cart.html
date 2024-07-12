@@ -15,10 +15,10 @@
         </tr>
       </thead>
       <tbody id="cart">
-        {% for item in cart_items %}
-          <tr data-item-id="{{ item.id }}">
-            <td>{{ item.name }}</td>
-            <td>x{{ item.quantity }}</td>
+        {% for item_id, item in cart_items.items() %}
+    <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.quantity }}</td>
             <td>£{{ item.price }}</td>
             <td><button class="remove-from-cart" data-item-id="{{ item.id }}">Remove</button></td>
           </tr>
@@ -29,19 +29,9 @@
     <form id="checkout-form">
       <input type="submit" value="Checkout">
     </form>
-  </div>
-  <div class="sidebar-cart">
-    <h2>Cart Summary</h2>
-    <ul>
-      {% for item in cart_items %}
-        <li>
-          {{ item.name }} (x{{ item.quantity }})
-          <span>£{{ item.price }}</span>
-        </li>
-      {% endfor %}
+
     </ul>
-    <p>Total: £{{ total_price }}</p>
-    <button class="checkout-btn">Checkout</button>
+    <p>Total: £{{ price }}</p>
   </div>
 
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
