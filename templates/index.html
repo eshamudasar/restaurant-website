@@ -1,5 +1,35 @@
 {% extends 'base.html' %}
+
 {% block content %}
-<h2>Welcome to Lahore Badshah</h2>
-<p>Your favorite place for authentic Lahori cuisine!</p>
+<section class="hero">
+    <h1>Welcome to Lahore Butt Karahi</h1>
+    <p>Experience the authentic taste of Lahore</p>
+   
+</section>
+
+<section class="featured-dishes">
+    <h2>Featured Dishes</h2>
+    <div class="dish-grid">
+        {% for dish in featured_dishes %}
+        <div class="dish-card">
+            <img src="{{ url_for('static', filename='images/' + dish.image_file) }}" alt="{{ dish.name }}">
+            <h3>{{ dish.name }}</h3>
+            <p>{{ dish.description }}</p>
+            <p>£{{ dish.price }}</p>
+            <button>Add to Cart</button>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="about-us">
+    <h2>About Us</h2>
+    <p>Lahori Badshah is a family-run restaurant that brings you the authentic taste of Lahore...</p>
+    <button>Read More</button>
+</section>
+
+<section class="call-to-action">
+    <h2>Order Now and Get 10% Off!</h2>
+    <button>Order Online</button>
+</section>
 {% endblock %}
