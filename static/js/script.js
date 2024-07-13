@@ -97,18 +97,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('checkout-form').addEventListener('submit', (event) => {
     event.preventDefault();
-    fetch('/checkout', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        }
+    const formData = new FormData(event.target);
+    fetch('/checkout/process', {
+      method: 'POST',
+      body: JSON.stringify(Object.fromEntries(formData)),
+      headers: {
+        'Content-Type': 'application/json'
+      }
     })
     .then(response => response.json())
     .then(data => {
-        document.getElementById('order-status').textContent = `Order placed successfully! Order ID: ${data.orderId}`;
-        cartElement.innerHTML = ''; // Clear the cart UI
+        
+        window.location.href = '/checkout'; // Redirect to checkout page
+      document.getElementById('order-status').textContent = `Order placed successfully! Order ID: ${data.orderId}`;
+      // Clear the cart UI
+      document.getElementById('cart').innerHTML = '';
     })
     .catch(error => console.error('Error during checkout:', error));
   });
+  document.getElementById('payment_method').addEventListener('change', function() {
+    if (this.value === 'card') {
+      document.getElementById('card-payment-method').style.display = 'block';
+    } else {
+      document.getElementById('card-payment-method').style.display = 'none';
+    }
+  });
+  
 });
 
