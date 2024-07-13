@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<section class="order-now-link">
+
+    <p>Order Now and Get Free Delivery on Order Above £15, within 2 mile radius</p>
+</section>
+
 <section class="hero">
-    <h1>Welcome to Lahore Butt Karahi</h1>
+    <h1>Welcome to Lahori Badshah</h1>
     <p>Experience the authentic taste of Lahore</p>
    
 </section>
+
 
 <section class="featured-dishes">
     <h2>Featured Dishes</h2>
@@ -13,10 +19,10 @@
         {% for dish in featured_dishes %}
         <div class="dish-card">
             <img src="{{ url_for('static', filename='images/' + dish.image_file) }}" alt="{{ dish.name }}">
-            <h3>{{ dish.name }}</h3>
+            <h3>{{ dish.name }}</h3> 
             <p>{{ dish.description }}</p>
             <p>£{{ dish.price }}</p>
-            <button>Add to Cart</button>
+             <button class="add-to-cart" data-item-id="{{dish.id }}" data-item-name="{{ dish.name }}" data-item-price="{{ dish.price }}">Add to Basket</button>
         </div>
         {% endfor %}
     </div>
@@ -24,12 +30,13 @@
 
 <section class="about-us">
     <h2>About Us</h2>
-    <p>Lahori Badshah is a family-run restaurant that brings you the authentic taste of Lahore...</p>
-    <button>Read More</button>
+    <p>Lahori Badshah is a family-run restaurant that brings you the authentic taste of Lahore</p>
+  
 </section>
 
 <section class="call-to-action">
-    <h2>Order Now and Get 10% Off!</h2>
+    <h2>142 Cheetham Hill Rd, Cheetham Hill, Manchecsteer M8 8PZ, United Kingdom</h2>
+    <h3>Telephone Number: 0161 834 5656</h3>
     <button>Order Online</button>
 </section>
 {% endblock %}
