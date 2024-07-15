@@ -46,8 +46,8 @@ nav ul li a:hover {
 
 /* Add some styles to the logo */
 nav img {
-    width: 159px;
-    height: 80px;
+    width: 145px;
+    height: 75px;
     margin-right: 10px;
 }
 
@@ -555,7 +555,8 @@ nav img {
   color: #191a1a; /* black color */
   font-weight: bold;
 }
-/*<!-- catering.html --> */
+
+/*<!-- catering.html (no changes) --> */
 
 
 .container {
