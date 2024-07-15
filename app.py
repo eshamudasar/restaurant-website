@@ -28,6 +28,7 @@ def index():
     ]
     return render_template('index.html', featured_dishes=featured_dishes)
 
+
 @app.route('/menu')
 def menu():
     menu_items = collection.find()
@@ -37,22 +38,33 @@ def menu():
             category = item['category']
             if category not in categories:
                 categories[category] = []
-                for subitem in item['items']:
-                    categories[category].append({'name': subitem['name'], 'price': subitem['price'], 'image_file': subitem['image_file']})
+            for subitem in item['items']:
+                if '_id' not in subitem:
+                    subitem['_id'] = str(uuid.uuid4())
+                categories[category].append({
+                    'id': str(subitem['_id']),  # Ensure '_id' is converted to a string
+                    'name': subitem['name'],
+                    'price': subitem['price'],
+                    'image_file': subitem['image_file']
+                })
     return render_template('menu.html', categories=categories.items())
 
-cart=[]
 @app.route('/cart', methods=['POST'])
 def add_to_cart():
     if 'cart' not in session:
-        session['cart'] = []
+        session['cart'] = {}
     item_id = request.json['item_id']
     item_name = request.json['item_name']
     item_price = request.json['item_price']
     if item_id in session['cart']:
         session['cart'][item_id]['quantity'] += 1
     else:
-        session['cart'][item_id] = {'name': item_name, 'price': item_price, 'quantity': 1}
+        session['cart'][item_id] = {
+            'name': item_name,
+            'price': item_price,
+            'quantity': 1
+        }
+    session.modified = True
     return jsonify({'quantity': session['cart'][item_id]['quantity']})
 
 @app.route('/cart/update', methods=['POST'])
@@ -61,9 +73,8 @@ def update_quantity():
     quantity = int(request.json['quantity'])
     if 'cart' in session and item_id in session['cart']:
         session['cart'][item_id]['quantity'] = quantity
+    session.modified = True
     return jsonify({})
-
-
 
 @app.route('/cart/remove', methods=['POST'])
 def remove_from_cart():
@@ -72,7 +83,7 @@ def remove_from_cart():
         if item_id in session['cart']:
             del session['cart'][item_id]
             session.modified = True
-            subtotal = sum(float(item['price'].replace('£', '').replace(',', '')) * item['quantity'] for item in session['cart'].values())
+            subtotal = sum(float(item['price']) * item['quantity'] for item in session['cart'].values())
             return jsonify({'subtotal': subtotal})
     return jsonify({'error': 'Item not found in cart'}), 404
 
@@ -82,13 +93,14 @@ def cart():
         cart_items = list(session['cart'].values())
         item_ids = list(session['cart'].keys())
         cart_list = [{'item': item, 'item_id': item_id} for item, item_id in zip(cart_items, item_ids)]
-        subtotal = sum(float(item['price'].replace('£', '').replace(',', '')) * item['quantity'] for item in cart_items)
+        subtotal = sum(float(item['price']) * item['quantity'] for item in cart_items)
         total = subtotal
     else:
         cart_list = []
         subtotal = 0
         total = 0
     return render_template('cart.html', cart_list=cart_list, subtotal=subtotal, total=total)
+
 
 @app.route('/checkout')
 def checkout():
