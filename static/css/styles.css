@@ -46,8 +46,8 @@ nav ul li a:hover {
 
 /* Add some styles to the logo */
 nav img {
-    width: 200px;
-    height: 100px;
+    width: 159px;
+    height: 80px;
     margin-right: 10px;
 }
 
@@ -335,9 +335,10 @@ nav img {
   padding: 35px; /* add some padding */
 }
 
+
 /* Style the contact div */
 .contact {
-  max-width: 600px; /* limit the width */
+  max-width: 800px; /* limit the width */
   margin: 40px auto; /* center the div */
   padding: 20px; /* add some padding */
   background-color: rgba(255, 255, 255, 0.9);
@@ -345,11 +346,32 @@ nav img {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.contact h1 {
+  font-weight: bold; 
+  padding: 20px; 
+  text-align: center;
+}
+
 /* Style the h2 heading */
 .contact h2 {
   font-weight: bold; /* make the font bold */
   font-size: 24px; /* increase the font size */
   margin-bottom: 10px; /* add some margin below */
+  border-bottom: 2px solid #308a7f; /* add bottom border */
+  padding-bottom: 10px; /* add padding to the bottom */
+  position: relative;
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.contact h2:before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: #308a7f; /* change color to match your theme */
 }
 
 /* Style the p paragraph */
@@ -359,7 +381,7 @@ nav img {
 }
 
 /* Style the form elements */
-.contact input,.contact textarea {
+.contact input, .contact textarea {
   width: 100%; /* make the input fields full-width */
   padding: 10px; /* add some padding */
   margin-bottom: 20px; /* add some margin below */
@@ -377,9 +399,55 @@ nav img {
 
 /* Style the button on hover */
 .contact button:hover {
-  background-color: #e7f4e8; 
+  background-color: #276c64; 
 }
 
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.contact-info div {
+  text-align: center;
+  flex: 1;
+  padding: 0 10px;
+}
+
+.contact-info h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+  border-bottom: 2px solid #308a7f; /* add bottom border */
+  padding-bottom: 10px; /* add padding to the bottom */
+  position: relative;
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.contact-info h2:before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: #308a7f; /* change color to match your theme */
+}
+
+.contact-info p {
+  font-size: 16px;
+  color: #666;
+}
+
+.contact-info a {
+  color: #308a7f;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
 /* Checkout section styles */
 
 /* Checkout Container */
