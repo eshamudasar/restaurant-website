@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Menu{% endblock %}
+
+{% block content %}
+<div class= "Menu ">
+  <h1> Our Menu</h1>
+</div>
+  <div class="menu-container">
+    {% for category, items in categories %}
+      <div class="menu-category">
+        <h2>{{ category }}</h2>
+        <div class="menu-items">
+          {% for item in items %}
+            <div class="menu-item">
+              <div class="item-image">
+                <img src="{{ url_for('static', filename='images/' + item.image_file) }}" alt="{{ item.name }}">
+              </div>
+              <div class="item-info">
+                <h3>{{ item.name }}</h3>
+                <p>£ {{ item.price }}</p> <p> </p>
+                <button class="add-to-cart" data-item-id="{{ item.id }}" data-item-name="{{ item.name }}" data-item-price="{{ item.price }}">Add to Basket</button>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

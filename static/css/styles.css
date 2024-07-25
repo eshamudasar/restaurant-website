@@ -1,0 +1,665 @@
+/* remove margin and padding from the body */
+
+body {
+    background-image: url('/static/images/chicken_tikka.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+/* Add some padding to the header */
+header {
+    padding: 0.3rem 2rem;
+    background-color: #000000;
+    color: #fff;
+}
+
+/* Style the navigation menu */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: #ccc;
+}
+
+/* Add some styles to the logo */
+nav img {
+    width: 145px;
+    height: 75px;
+    margin-right: 10px;
+}
+
+
+  .hero {
+    background-size: cover;
+    height: 300px;
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(232, 246, 251);
+
+}
+.half {
+  width: 50%;
+  float: left;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.featured-dishes {
+    padding: 20px;
+}
+
+.dish-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dish-card {
+    margin: 10px;
+    width: calc(25% - 40px);
+    background-color: #ffffff;
+    border: 1px solid #c8e6a3;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.dish-card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dish-card img {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.dish-card h3 {
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.dish-card p {
+    margin-bottom: 10px;
+}
+
+.about-us {
+  
+  margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #e7f5f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-us h2 {
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.about-us button {
+    background-color: #5ac1be;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.about-us button:hover {
+    background-color: #3e8e41;
+}
+
+.call-to-action {
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+.call-to-action h2 {
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.call-to-action button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.call-to-action button:hover {
+    background-color: #3e8e41;
+}
+  
+  
+  .menu-container {
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #e7f5f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.Menu h1{
+  color:#000000;
+  margin: 40px auto;
+  margin-left:552px ;
+  margin-right:559px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e7f5f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  .menu-category {
+    margin-bottom: 10px;
+  }
+  
+  .menu-category h2 {
+    font-weight: bold;
+    margin-top: 0;
+  }
+  
+  .menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .menu-item {
+    margin: 10px;
+    width: calc(20% - 30px);
+    padding: 15px;
+    box-sizing: border-box;
+  }
+  
+  .menu-item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .item-image {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .item-info {
+    padding: 10px;
+  }
+  
+  .item-info h3 {
+    font-weight: bold;
+    margin-top: 0;
+  }
+  
+  .item-info p {
+    margin-bottom: 10px;
+  }
+  
+  .add-to-cart {
+    background-color: #ffffff;
+    color: #464343;
+    border: none;
+    padding: 7px 10px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #b6efb8;
+  }
+  
+  #cart-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #cart-table th, #cart-table td {
+    border: 1px solid #ddd;
+    background-color: #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  #cart-table th {
+    background-color: #f0f0f0;
+  }
+  #sidebar-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #f5f5f5;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+    z-index: 1000;
+  }
+  
+  #sidebar {
+    padding: 20px;
+  }
+  
+  #sidebar h3 {
+    margin-top: 0;
+  }
+  
+  #sidebar-toggle {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    #sidebar-container {
+      transform: translateX(0);
+    }
+  
+    #sidebar-toggle {
+      display: block;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  
+    #main-content {
+      margin-right: 300px;
+    }
+  }
+  
+  .checkout-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .checkout-btn:hover {
+    background-color: #3e8e41;
+  }
+
+  footer {
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+/* Style the contact-us section */
+.contact-us {
+  padding: 35px; /* add some padding */
+}
+
+
+/* Style the contact div */
+.contact {
+  max-width: 800px; /* limit the width */
+  margin: 40px auto; /* center the div */
+  padding: 20px; /* add some padding */
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e7f5f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact h1 {
+  font-weight: bold; 
+  padding: 20px; 
+  text-align: center;
+}
+
+/* Style the h2 heading */
+.contact h2 {
+  font-weight: bold; /* make the font bold */
+  font-size: 24px; /* increase the font size */
+  margin-bottom: 10px; /* add some margin below */
+  border-bottom: 2px solid #308a7f; /* add bottom border */
+  padding-bottom: 10px; /* add padding to the bottom */
+  position: relative;
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.contact h2:before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: #308a7f; /* change color to match your theme */
+}
+
+/* Style the p paragraph */
+.contact p {
+  font-size: 16px; /* increase the font size */
+  margin-bottom: 20px; /* add some margin below */
+}
+
+/* Style the form elements */
+.contact input, .contact textarea {
+  width: 100%; /* make the input fields full-width */
+  padding: 10px; /* add some padding */
+  margin-bottom: 20px; /* add some margin below */
+  border: 1px solid #ccc; /* add a border */
+}
+
+/* Style the button */
+.contact button {
+  background-color: #308a7f; 
+  color: #fff; /* white text */
+  padding: 10px 20px; 
+  border: none; /* remove the border */
+  cursor: pointer; 
+}
+
+/* Style the button on hover */
+.contact button:hover {
+  background-color: #276c64; 
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.contact-info div {
+  text-align: center;
+  flex: 1;
+  padding: 0 10px;
+}
+
+.contact-info h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+  border-bottom: 2px solid #308a7f; /* add bottom border */
+  padding-bottom: 10px; /* add padding to the bottom */
+  position: relative;
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.contact-info h2:before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: #308a7f; /* change color to match your theme */
+}
+
+.contact-info p {
+  font-size: 16px;
+  color: #666;
+}
+
+.contact-info a {
+  color: #308a7f;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+/* Checkout section styles */
+
+/* Checkout Container */
+
+.checkout {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Order Summary */
+
+.order-summary {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.order-summary table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-summary th, .order-summary td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.order-summary th {
+  background-color: #f0f0f0;
+}
+
+/* Checkout Form */
+
+.checkout-form {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.checkout-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.checkout-form input[type="text"], .checkout-form input[type="email"], .checkout-form input[type="tel"] {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.checkout-form select {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.checkout-btn {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.checkout-btn:hover {
+  background-color: #3e8e41;
+}
+
+/* Order Status */
+
+.order-status {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.order-status p {
+  font-size: 18px;
+  color: #666;
+}
+
+.order-now-link {
+  color: #191a1a; /* black color */
+  font-weight: bold;
+}
+
+/*<!-- catering.html (no changes) --> */
+
+
+.container {
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e7f5f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.catering-hero {
+  background-image: url('/static/images/dinner.jpg'); /* add background image */
+  background-size: cover;
+  background-position: center;
+  height: 400px; /* set height to ensure image is visible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000; /* set text color to  */
+}
+
+.catering-hero h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.catering-hero p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.catering-types {
+  padding: 40px 0;
+  background-image: url('/static/images/dinner2.jpg'); /* add background image */
+  background-size: cover;
+  background-position: center;
+}
+
+.catering-types h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.catering-types ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  
+  justify-content: center;
+}
+
+.catering-types ul li {
+  margin: 10px;
+  width: calc(33.33% - 40px);
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e7f5f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.catering-stats {
+  padding: 40px 0;
+  background-image: url('/static/images/dinner3.jpg'); /* add background image */
+  background-size: cover;
+  background-position: center;
+}
+
+.catering-stats h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.catering-stats ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.catering-stats ul li {
+  margin: 20px;
+  width: calc(25% - 40px);
+  text-align: center;
+}
+
+.catering-stats ul li span {
+  font-weight: bold;
+  color: #2d3b47;
+}
