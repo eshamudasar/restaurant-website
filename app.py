@@ -4,7 +4,7 @@ import uuid
 from flask_session import Session
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb://localhost:27017/LahoreBadshah"
+app.config["MONGO_URI"] = "mongodb+srv://admin:admin@mycluster.w4b9g4s.mongodb.net/LahoreBadshah"
 app.secret_key = 'your_secret_key' 
 mongo = PyMongo(app)
 collection = mongo.db.menu
