@@ -1,2 +1,2 @@
-# LahoriBadsha
-It is a website for Lahori Badsha Restaurant.
+# Restaurant website
+It is a website for Restaurant.
